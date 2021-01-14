@@ -1,5 +1,7 @@
 package _01_nasty_surprise;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -10,16 +12,22 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class nastySurprise {
+public class nastySurprise implements ActionListener {
+	JButton trick = new JButton();
+	JButton treat = new JButton();
 	public nastySurprise() {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
-		JButton trick = new JButton();
-		JButton treat = new JButton();
 		frame.add(panel);
-		trick.add(trick);
-		trick.add(treat);
-		
+		panel.add(trick);
+		panel.add(treat);
+		trick.setText("Trick");
+		treat.setText("Treat");
+		frame.pack();
+		frame.setVisible(true);
+		trick.addActionListener(this);
+		treat.addActionListener(this);
+	
 	}
 
 	private void showPictureFromTheInternet(String imageUrl) {
@@ -39,5 +47,17 @@ public class nastySurprise {
 	public static void main(String[] args) {
 		nastySurprise trick = new nastySurprise();
 		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		JButton buttonPressed = (JButton) arg0.getSource();
+		if (buttonPressed == trick) {
+			showPictureFromTheInternet("https://hips.hearstapps.com/countryliving.cdnds.net/17/47/1511194376-cavachon-puppy-christmas.jpg");
+		}
+		else if (buttonPressed == treat) {
+			showPictureFromTheInternet("https://www.amle.org/Portals/0//EasyDNNnews/1092/1092Moulton_pic.jpg");
+		}
 	}
 }
