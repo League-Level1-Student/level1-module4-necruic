@@ -1,5 +1,6 @@
 package _07_fortune_teller;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /*
@@ -15,7 +16,6 @@ public class FortuneTellerRunner {
     
     static void begin() {
       	 // Welcome the user. Give them a hint for the secret location.
-JLabel label = new JLabel();
-label.setText("Welcome. );
+JOptionPane.showMessageDialog(null, "Welcome. Use the mouse to find the coordinates (150, 250).");
     }
 }
