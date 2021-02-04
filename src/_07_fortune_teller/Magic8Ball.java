@@ -34,7 +34,7 @@ JOptionPane.showMessageDialog(null, "no");
 	// 7. If the random number is 2
 else if(rand==2) {
 	// -- tell the user "Maybe you should ask Google?"
-JOptionPane.showMessageDialog(null, "Maybe you should ask google?);
+JOptionPane.showMessageDialog(null, "Maybe you should ask google?");
 }
 	// 8. If the random number is 3
 else if(rand==3) {

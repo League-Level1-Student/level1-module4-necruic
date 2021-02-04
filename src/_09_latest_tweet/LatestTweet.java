@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -19,9 +20,11 @@ public class LatestTweet implements ActionListener {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JButton button = new JButton();
-	JTextField field = new JTextField();
+	JTextField field = new JTextField(20);
 public static void main(String[] args) {
+	LatestTweet tweet = new LatestTweet() ;
 }
+
 public LatestTweet(){
 button.setText("search the twitterverse.");
 button.addActionListener(this);
@@ -36,7 +39,9 @@ public void actionPerformed(ActionEvent arg0) {
 	// TODO Auto-generated method stub
 	JButton buttonpressed = (JButton) arg0.getSource();
 	if (buttonpressed == button){
-		JOptionPane.showMessageDialog(null, "tweet, tweet.");
+		String twitsearch = field.getText();
+		String result = getLatestTweet(twitsearch);
+		JOptionPane.showMessageDialog(null, result);
 		
 	}
 }
@@ -61,3 +66,4 @@ Query query = new Query(searchingFor);
     }
 }
 }
+

@@ -113,7 +113,7 @@ public class Jeopardy implements ActionListener {
 		// If the buttonPressed was the firstButton
 		if (buttonPressed==firstButton) {
 			// Call the askQuestion() method
-			askQuestion()
+			//askQuestion()
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 		}
 		// If the buttonPressed was the secondButton
